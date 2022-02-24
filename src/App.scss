@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+* {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to left,
+    #0b172a,
+    #071f41,
+    #042659,
+    #0e2c71,
+    #223188
+  );
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 30%;
+  row-gap: 30px;
+  .container {
+    display: flex;
+    align-items: center;
+    .card-container {
+      position: relative;
+      height: 250px;
+      width: 470px;
+      .front {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 85%;
+        width: 90%;
+        padding: 5% 5%;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.4s ease-out;
+        .flexbox {
+          display: flex;
+          .box {
+            font-size: 15px;
+            color: #fff;
+          }
+          .box:nth-child(1) {
+            margin-right: auto;
+          }
+        }
+        .card-number-box {
+          font-size: 22px;
+          color: #fff;
+          input {
+            background: none;
+            border: none;
+            width: 100%;
+            height: 100%;
+            font-size: 1em;
+            color: white;
+            letter-spacing: 5px;
+          }
+          input:focus-visible {
+            outline: none;
+          }
+        }
+        .image {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .chipStyle {
+            height: 70px !important;
+          }
+          img {
+            height: 50px;
+          }
+        }
+      }
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 2.5%;
+        background-color: #333;
+        border-radius: 10px;
+        text-align: right;
+        backface-visibility: hidden;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transform: perspective(1000px) rotateY(180deg);
+        transition: transform 0.4s ease-out;
+        .stripe {
+          background: #000;
+          width: 100%;
+          margin: 5% 0;
+          height: 50px;
+        }
+        .box {
+          padding: 0 5%;
+          .cvvInput {
+            background: none;
+            border: none;
+            width: 10%;
+            height: 100%;
+            color: black;
+          }
+          .cvvInput:focus-visible {
+            outline: none;
+          }
+          span {
+            color: #fff;
+            font-size: 15px;
+            margin-right: 5%;
+          }
+          .cvv-box {
+            height: 50px;
+            width: 80%;
+            margin-top: 5px;
+            color: #333;
+            background: #fff;
+            border-radius: 5px;
+            width: 100%;
+          }
+          img {
+            margin-top: 30px;
+            height: 30px;
+          }
+        }
+        .boxBottom {
+          display: flex;
+          padding: 0 5%;
+          justify-content: right;
+          align-items: center;
+          column-gap: 5px;
+          .left {
+            display: flex;
+            flex-direction: column;
+            span {
+              color: #fff;
+              font-size: 13px;
+              margin-right: 5%;
+            }
+          }
+          .rigth {
+            display: flex;
+            .thru-input {
+              background: none;
+              border: none;
+              width: 5%;
+              height: 100%;
+              color: white;
+            }
+            .thru-input:focus-visible {
+              outline: none;
+            }
+            .thru-input-year {
+              background: none;
+              border: none;
+              width: 10%;
+              height: 100%;
+              color: white;
+            }
+            .thru-input-year:focus-visible {
+              outline: none;
+            }
+            span {
+              color: #fff;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .rotateFront {
+    transform: perspective(1000px) rotateY(180deg) !important;
+  }
+  .buttonSvg {
+    transform: perspective(1000px) rotateY(180deg);
+    transition: transform 0.4s ease-out;
+  }
+  .rotateBack {
+    transform: perspective(1000px) rotateY(360deg) !important;
+  }
+  .rotateButton {
+    transform: perspective(1000px) rotateY(0deg) !important;
+  }
+  .cardRotateButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    width: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.4s ease-out;
+    cursor: pointer;
+  }
+  .cardRotateButton:hover {
+    transform: scale(1.1);
+  }
+}
+.Parts {
+  background: transparent;
+  font-weight: 500;
+  color: #fff;
+  border: 0;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  letter-spacing: 10px;
+  text-align: center;
+  width: 24%;
+  outline: none;
+  &:nth-child(1) {
+    order: 0;
+    flex: 0 1 25%;
+    align-self: stretch;
+  }
+  &:nth-child(2) {
+    order: 0;
+    flex: 0 1 25%;
+    align-self: stretch;
+  }
+  &:nth-child(3) {
+    order: 0;
+    flex: 0 1 25%;
+    align-self: stretch;
+  }
+  &:nth-child(4) {
+    order: 0;
+    flex: 0 1 25%;
+    align-self: stretch;
+  }
+}
+.resultDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 300px;
+  height: 200px;
+  margin-top: 60%;
+  border-radius: 10px;
+  img {
+    width: 90px;
+  }
+  span {
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+}
